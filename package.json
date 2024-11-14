@@ -1,5 +1,5 @@
 {
-  "name": "@nutgaard/i18n-tools",
+  "name": "@code-obos/i18n-tools",
   "version": "0.0.0-development",
   "description": "Tools to work with I18N messages",
   "keywords": [
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nutgaard/i18n-tools"
+    "url": "https://github.com/code-obos/i18n-tools"
   },
   "main": "./lib/index.js",
   "bin": {
@@ -21,7 +21,7 @@
     "lib"
   ],
   "publishConfig": {
-    "access": "public"
+    "registry": "https://npm.pkg.github.com"
   },
   "scripts": {
     "prepare": "husky install",
