@@ -5,10 +5,10 @@ Utility for building and compiling I18N bundles.
 The project uses tools from [FormatJS](https://formatjs.io/), if your project uses other tools it may not work for you.
 
 **Install globally:**
-`npm install @nutgaard/i18n-tools -g`
+`npm install @code-obos/i18n-tools -g`
 
 **Install in project:**
-`npm install @nutgaard/i18n-tools --save-dev`
+`npm install @code-obos/i18n-tools --save-dev`
 
 ## Usage
 
