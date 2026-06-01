@@ -1,6 +1,6 @@
-import { IntlBundle } from './create-message-bundle';
-import { IntlFile } from '../utils/intl-file';
-import { compileIcuMessageIntoFunction } from './compile-icu-message-into-function';
+import { IntlBundle } from './create-message-bundle.js';
+import { IntlFile } from '../utils/intl-file.js';
+import { compileIcuMessageIntoFunction } from './compile-icu-message-into-function.js';
 
 export function compileIntlLutBundle(bundle: IntlBundle, useTypescript: boolean): string {
     const out = [];

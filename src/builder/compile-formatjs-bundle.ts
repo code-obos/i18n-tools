@@ -2,8 +2,7 @@
  * Source taken from https://github.com/formatjs/formatjs/blob/main/packages/cli-lib/src/compile.ts
  * in order to support memfs
  */
-import { Opts } from '@formatjs/cli-lib/src/compile';
-import { resolveBuiltinFormatter } from '@formatjs/cli-lib/src/formatters';
+import type { CompileOpts } from '@formatjs/cli-lib';
 import {
     parse,
     isDateElement,
@@ -15,14 +14,13 @@ import {
     MessageFormatElement,
 } from '@formatjs/icu-messageformat-parser';
 import stringify from 'json-stable-stringify';
-import { getFilesystem } from '../utils/get-filesystem';
+import { getFilesystem } from '../utils/get-filesystem.js';
 
-export type TZOpts = Opts & { timeZone?: string };
+export type TZOpts = CompileOpts & { timeZone?: string };
 
 export async function compile(inputFiles: string[], opts: TZOpts = {}): Promise<string> {
     const fs = getFilesystem();
-    const { ast, format, skipErrors } = opts;
-    const formatter = await resolveBuiltinFormatter(format);
+    const { ast, skipErrors } = opts;
 
     const messages: Record<string, string> = {};
     const messageAsts: Record<string, MessageFormatElement[]> = {};
@@ -31,7 +29,7 @@ export async function compile(inputFiles: string[], opts: TZOpts = {}): Promise<
         fs.promises
             .readFile(file, { encoding: 'utf-8' })
             .then((content) => JSON.parse(content.toString()))
-            .then(formatter.compile),
+            .then((content) => normalizeMessages(content, file)),
     );
     const compiledFiles = await Promise.all(filecompiler);
     for (let i = 0; i < inputFiles.length; i++) {
@@ -62,9 +60,34 @@ Message from ${inputFile}: ${compiled[id]}
     return (
         stringify(ast ? messageAsts : messages, {
             space: 2,
-            cmp: formatter.compareMessages || undefined,
-        }) ?? ''
+        }) ?? '{}'
     );
+}
+
+function normalizeMessages(content: unknown, file: string): Record<string, string> {
+    if (!content || typeof content !== 'object' || Array.isArray(content)) {
+        throw new Error(`Expected a JSON object in ${file}`);
+    }
+
+    const out: Record<string, string> = {};
+    for (const [id, value] of Object.entries(content)) {
+        if (typeof value === 'string') {
+            out[id] = value;
+            continue;
+        }
+
+        if (value && typeof value === 'object' && 'defaultMessage' in value) {
+            const defaultMessage = (value as { defaultMessage?: unknown }).defaultMessage;
+            if (typeof defaultMessage === 'string') {
+                out[id] = defaultMessage;
+                continue;
+            }
+        }
+
+        throw new Error(`Unsupported message entry for id "${id}" in ${file}`);
+    }
+
+    return out;
 }
 
 function injectTimeZone(timeZone: string | undefined, parts: MessageFormatElement[]): MessageFormatElement[] {

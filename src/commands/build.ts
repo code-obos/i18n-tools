@@ -1,13 +1,13 @@
 import { Command, program } from 'commander';
 import * as path from 'path';
-import { BuildOptions, validFormats } from '../config';
-import { createMessageBundle, IntlLocaleBundle } from '../builder/create-message-bundle';
-import { compileIntlTextBundles } from '../builder/compile-intl-text-bundles';
-import { compileIntlLutBundle } from '../builder/compile-intl-lut-bundle';
-import { getIntlFiles } from '../utils/get-intl-files';
-import { validateStructure } from '../validator/validate';
-import { getFilesystem } from '../utils/get-filesystem';
-import { compile } from '../builder/compile-formatjs-bundle';
+import { BuildOptions, validFormats } from '../config.js';
+import { createMessageBundle, IntlLocaleBundle } from '../builder/create-message-bundle.js';
+import { compileIntlTextBundles } from '../builder/compile-intl-text-bundles.js';
+import { compileIntlLutBundle } from '../builder/compile-intl-lut-bundle.js';
+import { getIntlFiles } from '../utils/get-intl-files.js';
+import { validateStructure } from '../validator/validate.js';
+import { getFilesystem } from '../utils/get-filesystem.js';
+import { compile } from '../builder/compile-formatjs-bundle.js';
 
 export const buildCommand: Command = program
     .createCommand('build')

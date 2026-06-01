@@ -18,6 +18,7 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
+    "rootDir": "src",
     "outDir": "lib",
     "types": [
       "node"

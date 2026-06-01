@@ -1,10 +1,10 @@
 import { Command, program } from 'commander';
 import * as readline from 'readline';
 import * as chokidar from 'chokidar';
-import { validFormats, WatchOptions } from '../config';
-import { runBuildCommand } from './build';
-import logger from '../utils/logger';
-import { runFixCommand } from './fix';
+import { validFormats, WatchOptions } from '../config.js';
+import { runBuildCommand } from './build.js';
+import logger from '../utils/logger.js';
+import { runFixCommand } from './fix.js';
 
 interface Key {
     sequence: string;

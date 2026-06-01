@@ -1,6 +1,6 @@
 import * as pathUtils from 'path';
-import { camelCase } from './string-utils';
-import { getFilesystem } from './get-filesystem';
+import { camelCase } from './string-utils.js';
+import { getFilesystem } from './get-filesystem.js';
 
 const languagePattern = /_([^\W_]+)\.\w+$/;
 const removeLanguagePattern = /(?:_[^\W_]+)?\.\w+$/;

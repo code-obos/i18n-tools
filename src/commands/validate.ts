@@ -1,6 +1,6 @@
 import { Command, program } from 'commander';
-import { getIntlFiles } from '../utils/get-intl-files';
-import { validateStructure } from '../validator/validate';
+import { getIntlFiles } from '../utils/get-intl-files.js';
+import { validateStructure } from '../validator/validate.js';
 
 export const validateCommand: Command = program
     .createCommand('validate')

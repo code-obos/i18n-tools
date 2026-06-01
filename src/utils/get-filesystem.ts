@@ -1,5 +1,8 @@
 import * as fs from 'fs';
+import { createRequire } from 'module';
 import { IFs } from 'memfs';
+
+const require = createRequire(import.meta.url);
 
 let memfs: IFs | null = null;
 try {

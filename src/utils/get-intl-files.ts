@@ -1,5 +1,5 @@
-import { IntlFile } from './intl-file';
-import { getAllFiles } from './io-utils';
+import { IntlFile } from './intl-file.js';
+import { getAllFiles } from './io-utils.js';
 
 const filePattern = /_[\w_]+\.(?:txt|html|md)$/;
 export function getIntlFiles(directory: string): IntlFile[] {

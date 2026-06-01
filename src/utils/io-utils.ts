@@ -1,5 +1,5 @@
 import * as path from 'node:path';
-import { getFilesystem } from './get-filesystem';
+import { getFilesystem } from './get-filesystem.js';
 
 export function getAllFiles(directory: string): string[] {
     const fs = getFilesystem();

@@ -1,5 +1,5 @@
-import { IntlFile } from '../utils/intl-file';
-import { Format } from '../config';
+import { IntlFile } from '../utils/intl-file.js';
+import { Format } from '../config.js';
 
 interface IntlTextBundles {
     [key: string]: IntlTextBundle;
