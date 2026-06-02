@@ -59,10 +59,12 @@ Message from ${inputFile}: ${compiled[id]}
         }
     }
 
-    return stringify(ast ? messageAsts : messages, {
-        space: 2,
-        cmp: formatter.compareMessages || undefined,
-    });
+    return (
+        stringify(ast ? messageAsts : messages, {
+            space: 2,
+            cmp: formatter.compareMessages || undefined,
+        }) ?? ''
+    );
 }
 
 function injectTimeZone(timeZone: string | undefined, parts: MessageFormatElement[]): MessageFormatElement[] {
