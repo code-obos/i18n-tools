@@ -34,9 +34,3 @@ jobs:
         run: npm run test
       - name: Build
         run: npm run build
-      - name: Publish package
-        if: ${{ matrix.node == '22' }}
-        run: npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          NPM_TOKEN: ${{secrets.GITHUB_TOKEN}}
