@@ -39,7 +39,7 @@
     "@formatjs/intl": "^2.8.0"
   },
   "devDependencies": {
-    "@changesets/cli": "2.31.0",
+    "@changesets/cli": "^2.31.0",
     "@formatjs/intl": "^2.8.0",
     "@types/node": "^20.3.0",
     "@vitest/coverage-v8": "^0.32.0",
