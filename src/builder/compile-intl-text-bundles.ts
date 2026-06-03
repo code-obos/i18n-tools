@@ -1,5 +1,6 @@
 import { IntlFile } from '../utils/intl-file.js';
 import { Format } from '../config.js';
+import { normalizeId } from '../utils/string-utils.js';
 
 interface IntlTextBundles {
     [key: string]: IntlTextBundle;
@@ -30,7 +31,7 @@ function jsonLutFormatter(content: IntlTextBundle): string {
     const out = {};
     const entries = Object.entries(content);
     for (const [key, value] of entries) {
-        const parts = key.split('/');
+        const parts = key.split('.');
         let current: Record<string, any> = out;
 
         for (let i = 0; i < parts.length; i++) {
@@ -60,7 +61,7 @@ function formatjsFormatter(content: IntlTextBundle): string {
 function createTextBundle(files: IntlFile[]): IntlTextBundles {
     return files.reduce((acc, file) => {
         const locale = file.locale;
-        const key = file.textId;
+        const key = normalizeId(file.textId);
         const content = file.content;
 
         const localeGroup = (acc[locale] ?? {}) as IntlTextBundle;
