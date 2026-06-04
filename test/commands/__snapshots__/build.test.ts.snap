@@ -4,11 +4,11 @@ exports[`build command > should build json object 1`] = `
 {
   "/app/compiled/bundle_en.json": "{
   "first": "first content",
-  "folder/second": "some content"
+  "folder.second": "some content"
 }",
   "/app/compiled/bundle_nb.json": "{
   "first": "first content",
-  "folder/second": "some content"
+  "folder.second": "some content"
 }",
 }
 `;
@@ -39,13 +39,13 @@ exports[`build command > should build lut and compiled 1`] = `
       "value": "first content"
     }
   ],
-  "folder/nested/third": [
+  "folder.nested.third": [
     {
       "type": 0,
       "value": "second content"
     }
   ],
-  "folder/second": [
+  "folder.second": [
     {
       "type": 0,
       "value": "some content"
@@ -56,10 +56,10 @@ exports[`build command > should build lut and compiled 1`] = `
   "first": {
     "defaultMessage": "first content"
   },
-  "folder/nested/third": {
+  "folder.nested.third": {
     "defaultMessage": "second content"
   },
-  "folder/second": {
+  "folder.second": {
     "defaultMessage": "some content"
   }
 }",
@@ -70,13 +70,13 @@ exports[`build command > should build lut and compiled 1`] = `
       "value": "first content"
     }
   ],
-  "folder/nested/third": [
+  "folder.nested.third": [
     {
       "type": 0,
       "value": "second content"
     }
   ],
-  "folder/second": [
+  "folder.second": [
     {
       "type": 0,
       "value": "some content"
@@ -87,10 +87,10 @@ exports[`build command > should build lut and compiled 1`] = `
   "first": {
     "defaultMessage": "first content"
   },
-  "folder/nested/third": {
+  "folder.nested.third": {
     "defaultMessage": "second content"
   },
-  "folder/second": {
+  "folder.second": {
     "defaultMessage": "some content"
   }
 }",
@@ -104,9 +104,9 @@ export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
     "first": () => intl.formatMessage({ id: 'first' }, {}),
     "folder": {
       "nested": {
-        "third": () => intl.formatMessage({ id: 'folder/nested/third' }, {}),
+        "third": () => intl.formatMessage({ id: 'folder.nested.third' }, {}),
       },
-      "second": () => intl.formatMessage({ id: 'folder/second' }, {}),
+      "second": () => intl.formatMessage({ id: 'folder.second' }, {}),
     },
   }
 }",
@@ -117,13 +117,13 @@ exports[`build command > should build lut in javascript 1`] = `
 {
   "/app/compiled/bundle_en.js": "const texts = {
   "first": "first content",
-  "folder/second": "some content"
+  "folder.second": "some content"
 };
 
 export default texts;",
   "/app/compiled/bundle_nb.js": "const texts = {
   "first": "first content",
-  "folder/second": "some content"
+  "folder.second": "some content"
 };
 
 export default texts;",
@@ -131,7 +131,7 @@ export default texts;",
   return {
     "first": () => intl.formatMessage({ id: 'first' }, {}),
     "folder": {
-      "second": () => intl.formatMessage({ id: 'folder/second' }, {}),
+      "second": () => intl.formatMessage({ id: 'folder.second' }, {}),
     },
   }
 }",
@@ -142,13 +142,13 @@ exports[`build command > should build lut in typescript 1`] = `
 {
   "/app/compiled/bundle_en.ts": "const texts = {
   "first": "first content",
-  "folder/second": "some content"
+  "folder.second": "some content"
 };
 
 export default texts;",
   "/app/compiled/bundle_nb.ts": "const texts = {
   "first": "first content",
-  "folder/second": "some content"
+  "folder.second": "some content"
 };
 
 export default texts;",
@@ -161,7 +161,7 @@ export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
   return {
     "first": () => intl.formatMessage({ id: 'first' }, {}),
     "folder": {
-      "second": () => intl.formatMessage({ id: 'folder/second' }, {}),
+      "second": () => intl.formatMessage({ id: 'folder.second' }, {}),
     },
   }
 }",
@@ -330,7 +330,7 @@ exports[`build command > should compile example 1`] = `
       "value": "start_date"
     }
   ],
-  "group-by-page/title": [
+  "group-by-page.title": [
     {
       "type": 0,
       "value": "The folder structure is preserved in the look-up-table."
@@ -579,7 +579,7 @@ exports[`build command > should compile example 1`] = `
   "datetime": {
     "defaultMessage": "I started this project at {start_time,time,::HHmm} on {start_date,date,::ddMMM}"
   },
-  "group-by-page/title": {
+  "group-by-page.title": {
     "defaultMessage": "The folder structure is preserved in the look-up-table."
   },
   "literal": {
@@ -613,7 +613,7 @@ export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
     "datePluralAndTag": (args: { div: FormatXMLElementFn<React.ReactNode>;gender: 'male' | 'female' | 'other' | string;p: FormatXMLElementFn<React.ReactNode>;date: Date }) => intl.formatMessage({ id: 'datePluralAndTag' }, {div: args.div, gender: args.gender, p: args.p, date: args.date}),
     "datetime": (args: { start_time: Date;start_date: Date }) => intl.formatMessage({ id: 'datetime' }, {start_time: args.start_time, start_date: args.start_date}),
     "groupByPage": {
-      "title": () => intl.formatMessage({ id: 'group-by-page/title' }, {}),
+      "title": () => intl.formatMessage({ id: 'group-by-page.title' }, {}),
     },
     "literal": () => intl.formatMessage({ id: 'literal' }, {}),
     "number": (args: { smallest: number;biggest: number;bagel_price: number }) => intl.formatMessage({ id: 'number' }, {smallest: args.smallest, biggest: args.biggest, bagel_price: args.bagel_price}),
