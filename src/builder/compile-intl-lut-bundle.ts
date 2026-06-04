@@ -1,6 +1,7 @@
-import { IntlBundle } from './create-message-bundle';
-import { IntlFile } from '../utils/intl-file';
-import { compileIcuMessageIntoFunction } from './compile-icu-message-into-function';
+import { IntlBundle } from './create-message-bundle.js';
+import { IntlFile } from '../utils/intl-file.js';
+import { compileIcuMessageIntoFunction } from './compile-icu-message-into-function.js';
+import { normalizeId } from '../utils/string-utils.js';
 
 export function compileIntlLutBundle(bundle: IntlBundle, useTypescript: boolean): string {
     const out = [];
@@ -24,7 +25,8 @@ export function compileIntlLutBundle(bundle: IntlBundle, useTypescript: boolean)
 function recursiveAppend(bundle: IntlBundle, out: string[], indent: number = 0, useTypescript: boolean) {
     Object.entries(bundle).forEach(([key, value]) => {
         if (value instanceof IntlFile) {
-            const [_, fn] = compileIcuMessageIntoFunction(value.textId, value.content, useTypescript);
+            const normalizedId = normalizeId(value.textId);
+            const [_, fn] = compileIcuMessageIntoFunction(normalizedId, value.content, useTypescript);
             out.push(`${createIndent(indent)}"${key}": ${fn},`);
         } else {
             out.push(`${createIndent(indent)}"${key}": {`);

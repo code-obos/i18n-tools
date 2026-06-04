@@ -3,12 +3,12 @@
 exports[`build command > should build json object 1`] = `
 {
   "/app/compiled/bundle_en.json": "{
-  \\"first\\": \\"first content\\",
-  \\"folder/second\\": \\"some content\\"
+  "first": "first content",
+  "folder.second": "some content"
 }",
   "/app/compiled/bundle_nb.json": "{
-  \\"first\\": \\"first content\\",
-  \\"folder/second\\": \\"some content\\"
+  "first": "first content",
+  "folder.second": "some content"
 }",
 }
 `;
@@ -16,15 +16,15 @@ exports[`build command > should build json object 1`] = `
 exports[`build command > should build jsonlut object 1`] = `
 {
   "/app/compiled/bundle_en.json": "{
-  \\"first\\": \\"first content\\",
-  \\"folder\\": {
-    \\"second\\": \\"some content\\"
+  "first": "first content",
+  "folder": {
+    "second": "some content"
   }
 }",
   "/app/compiled/bundle_nb.json": "{
-  \\"first\\": \\"first content\\",
-  \\"folder\\": {
-    \\"second\\": \\"some content\\"
+  "first": "first content",
+  "folder": {
+    "second": "some content"
   }
 }",
 }
@@ -33,80 +33,80 @@ exports[`build command > should build jsonlut object 1`] = `
 exports[`build command > should build lut and compiled 1`] = `
 {
   "/app/compiled/bundle_en.compiled.json": "{
-  \\"first\\": [
+  "first": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"first content\\"
+      "type": 0,
+      "value": "first content"
     }
   ],
-  \\"folder/nested/third\\": [
+  "folder.nested.third": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"second content\\"
+      "type": 0,
+      "value": "second content"
     }
   ],
-  \\"folder/second\\": [
+  "folder.second": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"some content\\"
+      "type": 0,
+      "value": "some content"
     }
   ]
 }",
   "/app/compiled/bundle_en.json": "{
-  \\"first\\": {
-    \\"defaultMessage\\": \\"first content\\"
+  "first": {
+    "defaultMessage": "first content"
   },
-  \\"folder/nested/third\\": {
-    \\"defaultMessage\\": \\"second content\\"
+  "folder.nested.third": {
+    "defaultMessage": "second content"
   },
-  \\"folder/second\\": {
-    \\"defaultMessage\\": \\"some content\\"
+  "folder.second": {
+    "defaultMessage": "some content"
   }
 }",
   "/app/compiled/bundle_nb.compiled.json": "{
-  \\"first\\": [
+  "first": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"first content\\"
+      "type": 0,
+      "value": "first content"
     }
   ],
-  \\"folder/nested/third\\": [
+  "folder.nested.third": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"second content\\"
+      "type": 0,
+      "value": "second content"
     }
   ],
-  \\"folder/second\\": [
+  "folder.second": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"some content\\"
+      "type": 0,
+      "value": "some content"
     }
   ]
 }",
   "/app/compiled/bundle_nb.json": "{
-  \\"first\\": {
-    \\"defaultMessage\\": \\"first content\\"
+  "first": {
+    "defaultMessage": "first content"
   },
-  \\"folder/nested/third\\": {
-    \\"defaultMessage\\": \\"second content\\"
+  "folder.nested.third": {
+    "defaultMessage": "second content"
   },
-  \\"folder/second\\": {
-    \\"defaultMessage\\": \\"some content\\"
+  "folder.second": {
+    "defaultMessage": "some content"
   }
 }",
-  "/app/compiled/lut.ts": "import React from \\"react\\";
-import {IntlShape} from \\"@formatjs/intl\\";
+  "/app/compiled/lut.ts": "import React from "react";
+import {IntlShape} from "@formatjs/intl";
 // @ts-ignore
-import {FormatXMLElementFn} from \\"intl-messageformat\\";
+import {FormatXMLElementFn} from "intl-messageformat";
 
 export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
   return {
-    \\"first\\": () => intl.formatMessage({ id: 'first' }, {}),
-    \\"folder\\": {
-      \\"nested\\": {
-        \\"third\\": () => intl.formatMessage({ id: 'folder/nested/third' }, {}),
+    "first": () => intl.formatMessage({ id: 'first' }, {}),
+    "folder": {
+      "nested": {
+        "third": () => intl.formatMessage({ id: 'folder.nested.third' }, {}),
       },
-      \\"second\\": () => intl.formatMessage({ id: 'folder/second' }, {}),
+      "second": () => intl.formatMessage({ id: 'folder.second' }, {}),
     },
   }
 }",
@@ -116,22 +116,22 @@ export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
 exports[`build command > should build lut in javascript 1`] = `
 {
   "/app/compiled/bundle_en.js": "const texts = {
-  \\"first\\": \\"first content\\",
-  \\"folder/second\\": \\"some content\\"
+  "first": "first content",
+  "folder.second": "some content"
 };
 
 export default texts;",
   "/app/compiled/bundle_nb.js": "const texts = {
-  \\"first\\": \\"first content\\",
-  \\"folder/second\\": \\"some content\\"
+  "first": "first content",
+  "folder.second": "some content"
 };
 
 export default texts;",
   "/app/compiled/lut.js": "export function createIntlLUT(intl) {
   return {
-    \\"first\\": () => intl.formatMessage({ id: 'first' }, {}),
-    \\"folder\\": {
-      \\"second\\": () => intl.formatMessage({ id: 'folder/second' }, {}),
+    "first": () => intl.formatMessage({ id: 'first' }, {}),
+    "folder": {
+      "second": () => intl.formatMessage({ id: 'folder.second' }, {}),
     },
   }
 }",
@@ -141,27 +141,27 @@ export default texts;",
 exports[`build command > should build lut in typescript 1`] = `
 {
   "/app/compiled/bundle_en.ts": "const texts = {
-  \\"first\\": \\"first content\\",
-  \\"folder/second\\": \\"some content\\"
+  "first": "first content",
+  "folder.second": "some content"
 };
 
 export default texts;",
   "/app/compiled/bundle_nb.ts": "const texts = {
-  \\"first\\": \\"first content\\",
-  \\"folder/second\\": \\"some content\\"
+  "first": "first content",
+  "folder.second": "some content"
 };
 
 export default texts;",
-  "/app/compiled/lut.ts": "import React from \\"react\\";
-import {IntlShape} from \\"@formatjs/intl\\";
+  "/app/compiled/lut.ts": "import React from "react";
+import {IntlShape} from "@formatjs/intl";
 // @ts-ignore
-import {FormatXMLElementFn} from \\"intl-messageformat\\";
+import {FormatXMLElementFn} from "intl-messageformat";
 
 export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
   return {
-    \\"first\\": () => intl.formatMessage({ id: 'first' }, {}),
-    \\"folder\\": {
-      \\"second\\": () => intl.formatMessage({ id: 'folder/second' }, {}),
+    "first": () => intl.formatMessage({ id: 'first' }, {}),
+    "folder": {
+      "second": () => intl.formatMessage({ id: 'folder.second' }, {}),
     },
   }
 }",
@@ -171,456 +171,456 @@ export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
 exports[`build command > should compile example 1`] = `
 {
   "/app/compiled/bundle_en.compiled.json": "{
-  \\"argument\\": [
+  "argument": [
     {
-      \\"type\\": 1,
-      \\"value\\": \\"me\\"
+      "type": 1,
+      "value": "me"
     },
     {
-      \\"type\\": 0,
-      \\"value\\": \\" slaps \\"
+      "type": 0,
+      "value": " slaps "
     },
     {
-      \\"type\\": 1,
-      \\"value\\": \\"other\\"
+      "type": 1,
+      "value": "other"
     },
     {
-      \\"type\\": 0,
-      \\"value\\": \\" around a bit with a large trout\\"
+      "type": 0,
+      "value": " around a bit with a large trout"
     }
   ],
-  \\"camel-cased-name\\": [
+  "camel-cased-name": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"Names of files are camelCased in the look-up-table\\"
+      "type": 0,
+      "value": "Names of files are camelCased in the look-up-table"
     }
   ],
-  \\"datePluralAndTag\\": [
+  "datePluralAndTag": [
     {
-      \\"children\\": [
+      "children": [
         {
-          \\"type\\": 0,
-          \\"value\\": \\"\\\\n\\"
+          "type": 0,
+          "value": "\\n"
         },
         {
-          \\"options\\": {
-            \\"female\\": {
-              \\"value\\": [
+          "options": {
+            "female": {
+              "value": [
                 {
-                  \\"children\\": [
+                  "children": [
                     {
-                      \\"type\\": 0,
-                      \\"value\\": \\"She was born \\"
+                      "type": 0,
+                      "value": "She was born "
                     },
                     {
-                      \\"style\\": {
-                        \\"parsedOptions\\": {
-                          \\"day\\": \\"2-digit\\",
-                          \\"month\\": \\"short\\"
+                      "style": {
+                        "parsedOptions": {
+                          "day": "2-digit",
+                          "month": "short"
                         },
-                        \\"pattern\\": \\"ddMMM\\",
-                        \\"type\\": 1
+                        "pattern": "ddMMM",
+                        "type": 1
                       },
-                      \\"type\\": 4,
-                      \\"value\\": \\"date\\"
+                      "type": 4,
+                      "value": "date"
                     }
                   ],
-                  \\"type\\": 8,
-                  \\"value\\": \\"p\\"
+                  "type": 8,
+                  "value": "p"
                 }
               ]
             },
-            \\"male\\": {
-              \\"value\\": [
+            "male": {
+              "value": [
                 {
-                  \\"children\\": [
+                  "children": [
                     {
-                      \\"type\\": 0,
-                      \\"value\\": \\"He was born \\"
+                      "type": 0,
+                      "value": "He was born "
                     },
                     {
-                      \\"style\\": {
-                        \\"parsedOptions\\": {
-                          \\"day\\": \\"2-digit\\",
-                          \\"month\\": \\"short\\"
+                      "style": {
+                        "parsedOptions": {
+                          "day": "2-digit",
+                          "month": "short"
                         },
-                        \\"pattern\\": \\"ddMMM\\",
-                        \\"type\\": 1
+                        "pattern": "ddMMM",
+                        "type": 1
                       },
-                      \\"type\\": 4,
-                      \\"value\\": \\"date\\"
+                      "type": 4,
+                      "value": "date"
                     }
                   ],
-                  \\"type\\": 8,
-                  \\"value\\": \\"p\\"
+                  "type": 8,
+                  "value": "p"
                 }
               ]
             },
-            \\"other\\": {
-              \\"value\\": [
+            "other": {
+              "value": [
                 {
-                  \\"children\\": [
+                  "children": [
                     {
-                      \\"type\\": 0,
-                      \\"value\\": \\"They was born \\"
+                      "type": 0,
+                      "value": "They was born "
                     },
                     {
-                      \\"style\\": {
-                        \\"parsedOptions\\": {
-                          \\"day\\": \\"2-digit\\",
-                          \\"month\\": \\"short\\"
+                      "style": {
+                        "parsedOptions": {
+                          "day": "2-digit",
+                          "month": "short"
                         },
-                        \\"pattern\\": \\"ddMMM\\",
-                        \\"type\\": 1
+                        "pattern": "ddMMM",
+                        "type": 1
                       },
-                      \\"type\\": 4,
-                      \\"value\\": \\"date\\"
+                      "type": 4,
+                      "value": "date"
                     }
                   ],
-                  \\"type\\": 8,
-                  \\"value\\": \\"p\\"
+                  "type": 8,
+                  "value": "p"
                 }
               ]
             }
           },
-          \\"type\\": 5,
-          \\"value\\": \\"gender\\"
+          "type": 5,
+          "value": "gender"
         },
         {
-          \\"type\\": 0,
-          \\"value\\": \\".\\\\n\\"
+          "type": 0,
+          "value": ".\\n"
         }
       ],
-      \\"type\\": 8,
-      \\"value\\": \\"div\\"
+      "type": 8,
+      "value": "div"
     }
   ],
-  \\"datetime\\": [
+  "datetime": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"I started this project at \\"
+      "type": 0,
+      "value": "I started this project at "
     },
     {
-      \\"style\\": {
-        \\"parsedOptions\\": {
-          \\"hour\\": \\"2-digit\\",
-          \\"hourCycle\\": \\"h23\\",
-          \\"minute\\": \\"2-digit\\"
+      "style": {
+        "parsedOptions": {
+          "hour": "2-digit",
+          "hourCycle": "h23",
+          "minute": "2-digit"
         },
-        \\"pattern\\": \\"HHmm\\",
-        \\"type\\": 1
+        "pattern": "HHmm",
+        "type": 1
       },
-      \\"type\\": 4,
-      \\"value\\": \\"start_time\\"
+      "type": 4,
+      "value": "start_time"
     },
     {
-      \\"type\\": 0,
-      \\"value\\": \\" on \\"
+      "type": 0,
+      "value": " on "
     },
     {
-      \\"style\\": {
-        \\"parsedOptions\\": {
-          \\"day\\": \\"2-digit\\",
-          \\"month\\": \\"short\\"
+      "style": {
+        "parsedOptions": {
+          "day": "2-digit",
+          "month": "short"
         },
-        \\"pattern\\": \\"ddMMM\\",
-        \\"type\\": 1
+        "pattern": "ddMMM",
+        "type": 1
       },
-      \\"type\\": 3,
-      \\"value\\": \\"start_date\\"
+      "type": 3,
+      "value": "start_date"
     }
   ],
-  \\"group-by-page/title\\": [
+  "group-by-page.title": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"The folder structure is preserved in the look-up-table.\\"
+      "type": 0,
+      "value": "The folder structure is preserved in the look-up-table."
     }
   ],
-  \\"literal\\": [
+  "literal": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"A simple literal\\"
+      "type": 0,
+      "value": "A simple literal"
     }
   ],
-  \\"number\\": [
+  "number": [
     {
-      \\"style\\": \\"integer\\",
-      \\"type\\": 2,
-      \\"value\\": \\"smallest\\"
+      "style": "integer",
+      "type": 2,
+      "value": "smallest"
     },
     {
-      \\"type\\": 0,
-      \\"value\\": \\" is smaller than \\"
+      "type": 0,
+      "value": " is smaller than "
     },
     {
-      \\"style\\": \\"integer\\",
-      \\"type\\": 2,
-      \\"value\\": \\"biggest\\"
+      "style": "integer",
+      "type": 2,
+      "value": "biggest"
     },
     {
-      \\"type\\": 0,
-      \\"value\\": \\".\\\\n\\\\nThe price of this bagel is \\"
+      "type": 0,
+      "value": ".\\n\\nThe price of this bagel is "
     },
     {
-      \\"style\\": {
-        \\"parsedOptions\\": {
-          \\"compactDisplay\\": \\"short\\",
-          \\"currency\\": \\"GBP\\",
-          \\"notation\\": \\"compact\\",
-          \\"signDisplay\\": \\"always\\",
-          \\"style\\": \\"currency\\"
+      "style": {
+        "parsedOptions": {
+          "compactDisplay": "short",
+          "currency": "GBP",
+          "notation": "compact",
+          "signDisplay": "always",
+          "style": "currency"
         },
-        \\"tokens\\": [
+        "tokens": [
           {
-            \\"options\\": [
+            "options": [
             ],
-            \\"stem\\": \\"sign-always\\"
+            "stem": "sign-always"
           },
           {
-            \\"options\\": [
+            "options": [
             ],
-            \\"stem\\": \\"compact-short\\"
+            "stem": "compact-short"
           },
           {
-            \\"options\\": [
-              \\"GBP\\"
+            "options": [
+              "GBP"
             ],
-            \\"stem\\": \\"currency\\"
+            "stem": "currency"
           }
         ],
-        \\"type\\": 0
+        "type": 0
       },
-      \\"type\\": 2,
-      \\"value\\": \\"bagel_price\\"
+      "type": 2,
+      "value": "bagel_price"
     }
   ],
-  \\"plural\\": [
+  "plural": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"You searched for \\"
+      "type": 0,
+      "value": "You searched for "
     },
     {
-      \\"type\\": 1,
-      \\"value\\": \\"query\\"
+      "type": 1,
+      "value": "query"
     },
     {
-      \\"type\\": 0,
-      \\"value\\": \\", we found;\\\\n\\"
+      "type": 0,
+      "value": ", we found;\\n"
     },
     {
-      \\"offset\\": 0,
-      \\"options\\": {
-        \\"=0\\": {
-          \\"value\\": [
+      "offset": 0,
+      "options": {
+        "=0": {
+          "value": [
             {
-              \\"type\\": 0,
-              \\"value\\": \\"no results.\\"
+              "type": 0,
+              "value": "no results."
             }
           ]
         },
-        \\"one\\": {
-          \\"value\\": [
+        "one": {
+          "value": [
             {
-              \\"type\\": 0,
-              \\"value\\": \\"one result.\\"
+              "type": 0,
+              "value": "one result."
             }
           ]
         },
-        \\"other\\": {
-          \\"value\\": [
+        "other": {
+          "value": [
             {
-              \\"type\\": 7
+              "type": 7
             },
             {
-              \\"type\\": 0,
-              \\"value\\": \\" results.\\"
+              "type": 0,
+              "value": " results."
             }
           ]
         }
       },
-      \\"pluralType\\": \\"cardinal\\",
-      \\"type\\": 6,
-      \\"value\\": \\"count\\"
+      "pluralType": "cardinal",
+      "type": 6,
+      "value": "count"
     }
   ],
-  \\"select\\": [
+  "select": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"I know an awesome programmer.\\\\n\\"
+      "type": 0,
+      "value": "I know an awesome programmer.\\n"
     },
     {
-      \\"options\\": {
-        \\"female\\": {
-          \\"value\\": [
+      "options": {
+        "female": {
+          "value": [
             {
-              \\"type\\": 0,
-              \\"value\\": \\"She\\"
+              "type": 0,
+              "value": "She"
             }
           ]
         },
-        \\"male\\": {
-          \\"value\\": [
+        "male": {
+          "value": [
             {
-              \\"type\\": 0,
-              \\"value\\": \\"He\\"
+              "type": 0,
+              "value": "He"
             }
           ]
         },
-        \\"other\\": {
-          \\"value\\": [
+        "other": {
+          "value": [
             {
-              \\"type\\": 0,
-              \\"value\\": \\"They\\"
+              "type": 0,
+              "value": "They"
             }
           ]
         }
       },
-      \\"type\\": 5,
-      \\"value\\": \\"gender\\"
+      "type": 5,
+      "value": "gender"
     },
     {
-      \\"type\\": 0,
-      \\"value\\": \\" know every language.\\"
+      "type": 0,
+      "value": " know every language."
     }
   ],
-  \\"selectordinal\\": [
+  "selectordinal": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"You are \\"
+      "type": 0,
+      "value": "You are "
     },
     {
-      \\"offset\\": 0,
-      \\"options\\": {
-        \\"few\\": {
-          \\"value\\": [
+      "offset": 0,
+      "options": {
+        "few": {
+          "value": [
             {
-              \\"type\\": 7
+              "type": 7
             },
             {
-              \\"type\\": 0,
-              \\"value\\": \\"rd\\"
+              "type": 0,
+              "value": "rd"
             }
           ]
         },
-        \\"one\\": {
-          \\"value\\": [
+        "one": {
+          "value": [
             {
-              \\"type\\": 7
+              "type": 7
             },
             {
-              \\"type\\": 0,
-              \\"value\\": \\"st\\"
+              "type": 0,
+              "value": "st"
             }
           ]
         },
-        \\"other\\": {
-          \\"value\\": [
+        "other": {
+          "value": [
             {
-              \\"type\\": 7
+              "type": 7
             },
             {
-              \\"type\\": 0,
-              \\"value\\": \\"th\\"
+              "type": 0,
+              "value": "th"
             }
           ]
         },
-        \\"two\\": {
-          \\"value\\": [
+        "two": {
+          "value": [
             {
-              \\"type\\": 7
+              "type": 7
             },
             {
-              \\"type\\": 0,
-              \\"value\\": \\"nd\\"
+              "type": 0,
+              "value": "nd"
             }
           ]
         }
       },
-      \\"pluralType\\": \\"ordinal\\",
-      \\"type\\": 6,
-      \\"value\\": \\"position\\"
+      "pluralType": "ordinal",
+      "type": 6,
+      "value": "position"
     },
     {
-      \\"type\\": 0,
-      \\"value\\": \\" in the queue.\\"
+      "type": 0,
+      "value": " in the queue."
     }
   ],
-  \\"tag\\": [
+  "tag": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"Click \\"
+      "type": 0,
+      "value": "Click "
     },
     {
-      \\"children\\": [
+      "children": [
         {
-          \\"type\\": 0,
-          \\"value\\": \\"here\\"
+          "type": 0,
+          "value": "here"
         }
       ],
-      \\"type\\": 8,
-      \\"value\\": \\"anchor\\"
+      "type": 8,
+      "value": "anchor"
     },
     {
-      \\"type\\": 0,
-      \\"value\\": \\" to get your prize.\\"
+      "type": 0,
+      "value": " to get your prize."
     }
   ]
 }",
   "/app/compiled/bundle_en.json": "{
-  \\"argument\\": {
-    \\"defaultMessage\\": \\"{me} slaps {other} around a bit with a large trout\\"
+  "argument": {
+    "defaultMessage": "{me} slaps {other} around a bit with a large trout"
   },
-  \\"camel-cased-name\\": {
-    \\"defaultMessage\\": \\"Names of files are camelCased in the look-up-table\\"
+  "camel-cased-name": {
+    "defaultMessage": "Names of files are camelCased in the look-up-table"
   },
-  \\"datePluralAndTag\\": {
-    \\"defaultMessage\\": \\"<div>\\\\n{gender,select,\\\\n  male {<p>He was born {date,time,::ddMMM}</p>}\\\\n  female {<p>She was born {date,time,::ddMMM}</p>}\\\\n  other {<p>They was born {date,time,::ddMMM}</p>}\\\\n}.\\\\n</div>\\"
+  "datePluralAndTag": {
+    "defaultMessage": "<div>\\n{gender,select,\\n  male {<p>He was born {date,time,::ddMMM}</p>}\\n  female {<p>She was born {date,time,::ddMMM}</p>}\\n  other {<p>They was born {date,time,::ddMMM}</p>}\\n}.\\n</div>"
   },
-  \\"datetime\\": {
-    \\"defaultMessage\\": \\"I started this project at {start_time,time,::HHmm} on {start_date,date,::ddMMM}\\"
+  "datetime": {
+    "defaultMessage": "I started this project at {start_time,time,::HHmm} on {start_date,date,::ddMMM}"
   },
-  \\"group-by-page/title\\": {
-    \\"defaultMessage\\": \\"The folder structure is preserved in the look-up-table.\\"
+  "group-by-page.title": {
+    "defaultMessage": "The folder structure is preserved in the look-up-table."
   },
-  \\"literal\\": {
-    \\"defaultMessage\\": \\"A simple literal\\"
+  "literal": {
+    "defaultMessage": "A simple literal"
   },
-  \\"number\\": {
-    \\"defaultMessage\\": \\"{smallest,number,integer} is smaller than {biggest,number,integer}.\\\\n\\\\nThe price of this bagel is {bagel_price, number, ::sign-always compact-short currency/GBP}\\"
+  "number": {
+    "defaultMessage": "{smallest,number,integer} is smaller than {biggest,number,integer}.\\n\\nThe price of this bagel is {bagel_price, number, ::sign-always compact-short currency/GBP}"
   },
-  \\"plural\\": {
-    \\"defaultMessage\\": \\"You searched for {query}, we found;\\\\n{ count, plural,\\\\n    =0 {no results.}\\\\n    one {one result.}\\\\n    other {# results.}\\\\n}\\"
+  "plural": {
+    "defaultMessage": "You searched for {query}, we found;\\n{ count, plural,\\n    =0 {no results.}\\n    one {one result.}\\n    other {# results.}\\n}"
   },
-  \\"select\\": {
-    \\"defaultMessage\\": \\"I know an awesome programmer.\\\\n{gender,select,\\\\n  male {He}\\\\n  female {She}\\\\n  other {They}\\\\n} know every language.\\"
+  "select": {
+    "defaultMessage": "I know an awesome programmer.\\n{gender,select,\\n  male {He}\\n  female {She}\\n  other {They}\\n} know every language."
   },
-  \\"selectordinal\\": {
-    \\"defaultMessage\\": \\"You are { position, selectordinal,\\\\n          one {#st}\\\\n          two {#nd}\\\\n          few {#rd}\\\\n          other {#th}\\\\n        } in the queue.\\"
+  "selectordinal": {
+    "defaultMessage": "You are { position, selectordinal,\\n          one {#st}\\n          two {#nd}\\n          few {#rd}\\n          other {#th}\\n        } in the queue."
   },
-  \\"tag\\": {
-    \\"defaultMessage\\": \\"Click <anchor>here</anchor> to get your prize.\\"
+  "tag": {
+    "defaultMessage": "Click <anchor>here</anchor> to get your prize."
   }
 }",
-  "/app/compiled/lut.ts": "import React from \\"react\\";
-import {IntlShape} from \\"@formatjs/intl\\";
+  "/app/compiled/lut.ts": "import React from "react";
+import {IntlShape} from "@formatjs/intl";
 // @ts-ignore
-import {FormatXMLElementFn} from \\"intl-messageformat\\";
+import {FormatXMLElementFn} from "intl-messageformat";
 
 export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
   return {
-    \\"argument\\": (args: { me: string;other: string }) => intl.formatMessage({ id: 'argument' }, {me: args.me, other: args.other}),
-    \\"camelCasedName\\": () => intl.formatMessage({ id: 'camel-cased-name' }, {}),
-    \\"datePluralAndTag\\": (args: { div: FormatXMLElementFn<React.ReactNode>;gender: 'male' | 'female' | 'other' | string;p: FormatXMLElementFn<React.ReactNode>;date: Date }) => intl.formatMessage({ id: 'datePluralAndTag' }, {div: args.div, gender: args.gender, p: args.p, date: args.date}),
-    \\"datetime\\": (args: { start_time: Date;start_date: Date }) => intl.formatMessage({ id: 'datetime' }, {start_time: args.start_time, start_date: args.start_date}),
-    \\"groupByPage\\": {
-      \\"title\\": () => intl.formatMessage({ id: 'group-by-page/title' }, {}),
+    "argument": (args: { me: string;other: string }) => intl.formatMessage({ id: 'argument' }, {me: args.me, other: args.other}),
+    "camelCasedName": () => intl.formatMessage({ id: 'camel-cased-name' }, {}),
+    "datePluralAndTag": (args: { div: FormatXMLElementFn<React.ReactNode>;gender: 'male' | 'female' | 'other' | string;p: FormatXMLElementFn<React.ReactNode>;date: Date }) => intl.formatMessage({ id: 'datePluralAndTag' }, {div: args.div, gender: args.gender, p: args.p, date: args.date}),
+    "datetime": (args: { start_time: Date;start_date: Date }) => intl.formatMessage({ id: 'datetime' }, {start_time: args.start_time, start_date: args.start_date}),
+    "groupByPage": {
+      "title": () => intl.formatMessage({ id: 'group-by-page.title' }, {}),
     },
-    \\"literal\\": () => intl.formatMessage({ id: 'literal' }, {}),
-    \\"number\\": (args: { smallest: number;biggest: number;bagel_price: number }) => intl.formatMessage({ id: 'number' }, {smallest: args.smallest, biggest: args.biggest, bagel_price: args.bagel_price}),
-    \\"plural\\": (args: { query: string;count: number }) => intl.formatMessage({ id: 'plural' }, {query: args.query, count: args.count}),
-    \\"select\\": (args: { gender: 'male' | 'female' | 'other' | string }) => intl.formatMessage({ id: 'select' }, {gender: args.gender}),
-    \\"selectordinal\\": (args: { position: number }) => intl.formatMessage({ id: 'selectordinal' }, {position: args.position}),
-    \\"tag\\": (args: { anchor: FormatXMLElementFn<React.ReactNode> }) => intl.formatMessage({ id: 'tag' }, {anchor: args.anchor}),
+    "literal": () => intl.formatMessage({ id: 'literal' }, {}),
+    "number": (args: { smallest: number;biggest: number;bagel_price: number }) => intl.formatMessage({ id: 'number' }, {smallest: args.smallest, biggest: args.biggest, bagel_price: args.bagel_price}),
+    "plural": (args: { query: string;count: number }) => intl.formatMessage({ id: 'plural' }, {query: args.query, count: args.count}),
+    "select": (args: { gender: 'male' | 'female' | 'other' | string }) => intl.formatMessage({ id: 'select' }, {gender: args.gender}),
+    "selectordinal": (args: { position: number }) => intl.formatMessage({ id: 'selectordinal' }, {position: args.position}),
+    "tag": (args: { anchor: FormatXMLElementFn<React.ReactNode> }) => intl.formatMessage({ id: 'tag' }, {anchor: args.anchor}),
   }
 }",
 }
@@ -629,123 +629,123 @@ export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
 exports[`build command > should inject timezone into nested date-skeletons 1`] = `
 {
   "/app/compiled/bundle_en.compiled.json": "{
-  \\"date\\": [
+  "date": [
     {
-      \\"children\\": [
+      "children": [
         {
-          \\"type\\": 0,
-          \\"value\\": \\"\\\\n\\"
+          "type": 0,
+          "value": "\\n"
         },
         {
-          \\"options\\": {
-            \\"female\\": {
-              \\"value\\": [
+          "options": {
+            "female": {
+              "value": [
                 {
-                  \\"children\\": [
+                  "children": [
                     {
-                      \\"type\\": 0,
-                      \\"value\\": \\"She was born \\"
+                      "type": 0,
+                      "value": "She was born "
                     },
                     {
-                      \\"style\\": {
-                        \\"parsedOptions\\": {
-                          \\"day\\": \\"2-digit\\",
-                          \\"month\\": \\"short\\",
-                          \\"timeZone\\": \\"Europe/Oslo\\"
+                      "style": {
+                        "parsedOptions": {
+                          "day": "2-digit",
+                          "month": "short",
+                          "timeZone": "Europe/Oslo"
                         },
-                        \\"pattern\\": \\"ddMMM\\",
-                        \\"type\\": 1
+                        "pattern": "ddMMM",
+                        "type": 1
                       },
-                      \\"type\\": 4,
-                      \\"value\\": \\"date\\"
+                      "type": 4,
+                      "value": "date"
                     }
                   ],
-                  \\"type\\": 8,
-                  \\"value\\": \\"p\\"
+                  "type": 8,
+                  "value": "p"
                 }
               ]
             },
-            \\"male\\": {
-              \\"value\\": [
+            "male": {
+              "value": [
                 {
-                  \\"children\\": [
+                  "children": [
                     {
-                      \\"type\\": 0,
-                      \\"value\\": \\"He was born \\"
+                      "type": 0,
+                      "value": "He was born "
                     },
                     {
-                      \\"style\\": {
-                        \\"parsedOptions\\": {
-                          \\"day\\": \\"2-digit\\",
-                          \\"month\\": \\"short\\",
-                          \\"timeZone\\": \\"Europe/Oslo\\"
+                      "style": {
+                        "parsedOptions": {
+                          "day": "2-digit",
+                          "month": "short",
+                          "timeZone": "Europe/Oslo"
                         },
-                        \\"pattern\\": \\"ddMMM\\",
-                        \\"type\\": 1
+                        "pattern": "ddMMM",
+                        "type": 1
                       },
-                      \\"type\\": 4,
-                      \\"value\\": \\"date\\"
+                      "type": 4,
+                      "value": "date"
                     }
                   ],
-                  \\"type\\": 8,
-                  \\"value\\": \\"p\\"
+                  "type": 8,
+                  "value": "p"
                 }
               ]
             },
-            \\"other\\": {
-              \\"value\\": [
+            "other": {
+              "value": [
                 {
-                  \\"children\\": [
+                  "children": [
                     {
-                      \\"type\\": 0,
-                      \\"value\\": \\"They was born \\"
+                      "type": 0,
+                      "value": "They was born "
                     },
                     {
-                      \\"style\\": {
-                        \\"parsedOptions\\": {
-                          \\"day\\": \\"2-digit\\",
-                          \\"month\\": \\"short\\",
-                          \\"timeZone\\": \\"Europe/Oslo\\"
+                      "style": {
+                        "parsedOptions": {
+                          "day": "2-digit",
+                          "month": "short",
+                          "timeZone": "Europe/Oslo"
                         },
-                        \\"pattern\\": \\"ddMMM\\",
-                        \\"type\\": 1
+                        "pattern": "ddMMM",
+                        "type": 1
                       },
-                      \\"type\\": 4,
-                      \\"value\\": \\"date\\"
+                      "type": 4,
+                      "value": "date"
                     }
                   ],
-                  \\"type\\": 8,
-                  \\"value\\": \\"p\\"
+                  "type": 8,
+                  "value": "p"
                 }
               ]
             }
           },
-          \\"type\\": 5,
-          \\"value\\": \\"gender\\"
+          "type": 5,
+          "value": "gender"
         },
         {
-          \\"type\\": 0,
-          \\"value\\": \\".\\\\n\\"
+          "type": 0,
+          "value": ".\\n"
         }
       ],
-      \\"type\\": 8,
-      \\"value\\": \\"div\\"
+      "type": 8,
+      "value": "div"
     }
   ]
 }",
   "/app/compiled/bundle_en.json": "{
-  \\"date\\": {
-    \\"defaultMessage\\": \\"<div>\\\\n{gender,select,\\\\n  male {<p>He was born {date,time,::ddMMM}</p>}\\\\n  female {<p>She was born {date,time,::ddMMM}</p>}\\\\n  other {<p>They was born {date,time,::ddMMM}</p>}\\\\n}.\\\\n</div>\\"
+  "date": {
+    "defaultMessage": "<div>\\n{gender,select,\\n  male {<p>He was born {date,time,::ddMMM}</p>}\\n  female {<p>She was born {date,time,::ddMMM}</p>}\\n  other {<p>They was born {date,time,::ddMMM}</p>}\\n}.\\n</div>"
   }
 }",
-  "/app/compiled/lut.ts": "import React from \\"react\\";
-import {IntlShape} from \\"@formatjs/intl\\";
+  "/app/compiled/lut.ts": "import React from "react";
+import {IntlShape} from "@formatjs/intl";
 // @ts-ignore
-import {FormatXMLElementFn} from \\"intl-messageformat\\";
+import {FormatXMLElementFn} from "intl-messageformat";
 
 export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
   return {
-    \\"date\\": (args: { div: FormatXMLElementFn<React.ReactNode>;gender: 'male' | 'female' | 'other' | string;p: FormatXMLElementFn<React.ReactNode>;date: Date }) => intl.formatMessage({ id: 'date' }, {div: args.div, gender: args.gender, p: args.p, date: args.date}),
+    "date": (args: { div: FormatXMLElementFn<React.ReactNode>;gender: 'male' | 'female' | 'other' | string;p: FormatXMLElementFn<React.ReactNode>;date: Date }) => intl.formatMessage({ id: 'date' }, {div: args.div, gender: args.gender, p: args.p, date: args.date}),
   }
 }",
 }
@@ -754,57 +754,57 @@ export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
 exports[`build command > should should inject timezone into skeletons 1`] = `
 {
   "/app/compiled/bundle_en.compiled.json": "{
-  \\"date\\": [
+  "date": [
     {
-      \\"type\\": 0,
-      \\"value\\": \\"starts \\"
+      "type": 0,
+      "value": "starts "
     },
     {
-      \\"style\\": {
-        \\"parsedOptions\\": {
-          \\"day\\": \\"2-digit\\",
-          \\"month\\": \\"short\\",
-          \\"timeZone\\": \\"Europe/Oslo\\"
+      "style": {
+        "parsedOptions": {
+          "day": "2-digit",
+          "month": "short",
+          "timeZone": "Europe/Oslo"
         },
-        \\"pattern\\": \\"ddMMM\\",
-        \\"type\\": 1
+        "pattern": "ddMMM",
+        "type": 1
       },
-      \\"type\\": 3,
-      \\"value\\": \\"date\\"
+      "type": 3,
+      "value": "date"
     },
     {
-      \\"type\\": 0,
-      \\"value\\": \\" at \\"
+      "type": 0,
+      "value": " at "
     },
     {
-      \\"style\\": {
-        \\"parsedOptions\\": {
-          \\"hour\\": \\"2-digit\\",
-          \\"hourCycle\\": \\"h23\\",
-          \\"minute\\": \\"2-digit\\",
-          \\"timeZone\\": \\"Europe/Oslo\\"
+      "style": {
+        "parsedOptions": {
+          "hour": "2-digit",
+          "hourCycle": "h23",
+          "minute": "2-digit",
+          "timeZone": "Europe/Oslo"
         },
-        \\"pattern\\": \\"HHmm\\",
-        \\"type\\": 1
+        "pattern": "HHmm",
+        "type": 1
       },
-      \\"type\\": 3,
-      \\"value\\": \\"date\\"
+      "type": 3,
+      "value": "date"
     }
   ]
 }",
   "/app/compiled/bundle_en.json": "{
-  \\"date\\": {
-    \\"defaultMessage\\": \\"starts { date, date, ::ddMMM } at { date, date, ::HHmm }\\"
+  "date": {
+    "defaultMessage": "starts { date, date, ::ddMMM } at { date, date, ::HHmm }"
   }
 }",
-  "/app/compiled/lut.ts": "import React from \\"react\\";
-import {IntlShape} from \\"@formatjs/intl\\";
+  "/app/compiled/lut.ts": "import React from "react";
+import {IntlShape} from "@formatjs/intl";
 // @ts-ignore
-import {FormatXMLElementFn} from \\"intl-messageformat\\";
+import {FormatXMLElementFn} from "intl-messageformat";
 
 export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
   return {
-    \\"date\\": (args: { date: Date }) => intl.formatMessage({ id: 'date' }, {date: args.date}),
+    "date": (args: { date: Date }) => intl.formatMessage({ id: 'date' }, {date: args.date}),
   }
 }",
 }

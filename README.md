@@ -10,6 +10,16 @@ The project uses tools from [FormatJS](https://formatjs.io/), if your project us
 **Install in project:**
 `npm install @code-obos/i18n-tools --save-dev`
 
+## Breaking Changes (Dependency Modernization)
+
+The latest dependency upgrade introduces breaking changes that must be treated as a major release:
+
+1. The package now runs as ESM (`"type": "module"`).
+2. Node.js must be modern enough for the upgraded dependency set (recommended: active LTS).
+3. `@formatjs/intl` peer dependency is upgraded from `^2.8.0` to `^4.1.12`.
+
+These changes do not alter the expected CLI output behavior in this repository (verified by tests), but they can affect downstream integrations that depend on CommonJS behavior or older FormatJS versions.
+
 ## Usage
 
 ```shell

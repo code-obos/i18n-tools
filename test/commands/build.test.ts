@@ -195,7 +195,7 @@ describe('build command', () => {
             '/app/messages',
         );
 
-        expect(
+        await expect(
             (async () => {
                 await runBuildCommand(defaultConfig.srcDir, defaultConfig.outDir, {
                     strict: true,

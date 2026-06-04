@@ -1,4 +1,4 @@
-import { VariableDescription } from './extract-variables-from-ast';
+import { VariableDescription } from './extract-variables-from-ast.js';
 import { TYPE } from '@formatjs/icu-messageformat-parser';
 
 interface TypescriptArgument {

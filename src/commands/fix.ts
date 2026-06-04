@@ -1,7 +1,7 @@
 import path from 'path';
-import { getIntlFiles } from '../utils/get-intl-files';
-import { validateStructure } from '../validator/validate';
-import { getFilesystem } from '../utils/get-filesystem';
+import { getIntlFiles } from '../utils/get-intl-files.js';
+import { validateStructure } from '../validator/validate.js';
+import { getFilesystem } from '../utils/get-filesystem.js';
 import { Command, program } from 'commander';
 
 export const fixCommand: Command = program

@@ -1,6 +1,6 @@
-import { IntlFile } from '../utils/intl-file';
-import { groupBy } from '../utils/array-utils';
-import * as SetUtils from '../utils/set-utils';
+import { IntlFile } from '../utils/intl-file.js';
+import { groupBy } from '../utils/array-utils.js';
+import * as SetUtils from '../utils/set-utils.js';
 
 interface ValidationResult {
     error: boolean;

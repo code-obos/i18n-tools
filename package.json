@@ -1,7 +1,8 @@
 {
   "name": "@code-obos/i18n-tools",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Tools to work with I18N messages",
+  "type": "module",
   "keywords": [
     "I18N",
     "bundler",
@@ -36,27 +37,28 @@
   "author": "Nicklas Utgaard",
   "license": "MIT",
   "peerDependencies": {
-    "@formatjs/intl": "^2.8.0"
+    "@formatjs/intl": "^4.1.12"
   },
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
-    "@formatjs/intl": "^2.8.0",
-    "@types/node": "^20.3.0",
-    "@vitest/coverage-v8": "^0.32.0",
+    "@formatjs/intl": "^4.1.12",
+    "@types/node": "^24.12.4",
+    "@vitest/coverage-v8": "^4.1.8",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
-    "memfs": "^3.5.3",
-    "prettier": "^2.8.8",
+    "memfs": "^4.57.3",
+    "prettier": "^3.8.3",
     "ts-node": "^10.9.1",
-    "vitest": "^0.32.0"
+    "typescript": "^5.6.3",
+    "vitest": "^4.1.8"
   },
   "dependencies": {
-    "@formatjs/cli-lib": "^6.1.2",
-    "@formatjs/icu-messageformat-parser": "^2.5.0",
-    "chokidar": "^3.5.3",
-    "commander": "^12.1.0"
+    "@formatjs/cli-lib": "^8.6.0",
+    "@formatjs/icu-messageformat-parser": "^3.5.0",
+    "chokidar": "^4.0.3",
+    "commander": "^14.0.2"
   },
   "lint-staged": {
     "*.{ts,js,css,md}": "prettier --write"
