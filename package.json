@@ -1,6 +1,6 @@
 {
   "name": "@code-obos/i18n-tools",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Tools to work with I18N messages",
   "type": "module",
   "keywords": [
