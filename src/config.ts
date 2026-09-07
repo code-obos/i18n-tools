@@ -12,10 +12,5 @@ export interface BuildOptions {
     hasFixerListener?: boolean;
 }
 
-export interface WatchOptions {
-    format: Format;
-    typescript: boolean;
-    strict: boolean;
-    ast: boolean;
-    lut: boolean;
-}
+/** watch is build on a loop, so it accepts exactly the same options. */
+export type WatchOptions = BuildOptions;

@@ -1,6 +1,6 @@
 import { Command, program } from 'commander';
 import * as path from 'path';
-import { BuildOptions, validFormats } from '../config.js';
+import { BuildOptions } from '../config.js';
 import { createMessageBundle, IntlLocaleBundle } from '../builder/create-message-bundle.js';
 import { compileIntlTextBundles } from '../builder/compile-intl-text-bundles.js';
 import { compileIntlLutBundle } from '../builder/compile-intl-lut-bundle.js';
@@ -8,18 +8,15 @@ import { getIntlFiles } from '../utils/get-intl-files.js';
 import { validateStructure } from '../validator/validate.js';
 import { getFilesystem } from '../utils/get-filesystem.js';
 import { compile } from '../builder/compile-formatjs-bundle.js';
+import { addBuildOptions } from './build-options.js';
 
-export const buildCommand: Command = program
-    .createCommand('build')
-    .description('Bundles files in <srcDir> into i18n files')
-    .argument('<srcDir>', 'source folder of your i18n files')
-    .argument('<outDir>', 'output folder for your i18n bundles')
-    .addOption(program.createOption('-f, --format <format>', 'Output format').choices(validFormats).default('formatjs'))
-    .option('--typescript', 'Output script files with typescript', false)
-    .option('--strict', 'Run validation before bundling', false)
-    .option('--ast', 'Compile generated bundles (only availble with formatjs)', false)
-    .option('--lut', 'Generate look-up-table (only availble with formatjs)', false)
-    .option('-t, --timeZone <timezone>', 'Inject timezone into date/time skeletons')
+export const buildCommand: Command = addBuildOptions(
+    program
+        .createCommand('build')
+        .description('Bundles files in <srcDir> into i18n files')
+        .argument('<srcDir>', 'source folder of your i18n files')
+        .argument('<outDir>', 'output folder for your i18n bundles'),
+)
     .addHelpText('afterAll', '\n')
     .addHelpText('afterAll', 'Example: i18n-tool build example/messages example/compiled --ast --lut --typescript')
     .action(runBuildCommand);

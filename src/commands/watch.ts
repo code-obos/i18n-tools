@@ -1,10 +1,11 @@
 import { Command, program } from 'commander';
 import * as readline from 'readline';
 import * as chokidar from 'chokidar';
-import { validFormats, WatchOptions } from '../config.js';
+import { WatchOptions } from '../config.js';
 import { runBuildCommand } from './build.js';
 import logger from '../utils/logger.js';
 import { runFixCommand } from './fix.js';
+import { addBuildOptions } from './build-options.js';
 
 interface Key {
     sequence: string;
@@ -14,17 +15,13 @@ interface Key {
     shift: boolean;
 }
 
-export const watchCommand: Command = program
-    .createCommand('watch')
-    .description('Starts watching and rebundling files in <srcDir> into i18n files')
-    .argument('<srcDir>', 'source folder of your i18n files')
-    .argument('<outDir>', 'output folder for your i18n bundles')
-    .addOption(program.createOption('-f, --format <format>', 'Output format').choices(validFormats).default('formatjs'))
-    .option('--typescript', 'Output script files with typescript', false)
-    .option('--strict', 'Run validation before bundling', false)
-    .option('--ast', 'Compile generated bundles (only availble with formatjs)', false)
-    .option('--lut', 'Generate look-up-table (only availble with formatjs)', false)
-    .option('-t, --timeZone <timezone>', 'Inject timezone into date/time skeletons')
+export const watchCommand: Command = addBuildOptions(
+    program
+        .createCommand('watch')
+        .description('Starts watching and rebundling files in <srcDir> into i18n files')
+        .argument('<srcDir>', 'source folder of your i18n files')
+        .argument('<outDir>', 'output folder for your i18n bundles'),
+)
     .addHelpText('afterAll', '\n')
     .addHelpText('afterAll', 'Example: i18n-tool watch example/messages example/compiled --ast --lut --typescript')
     .action(runWatchCommand);
