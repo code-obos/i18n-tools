@@ -37,26 +37,26 @@
   "author": "Nicklas Utgaard",
   "license": "MIT",
   "peerDependencies": {
-    "@formatjs/intl": "^4.1.12"
+    "@formatjs/intl": "^4.1.20"
   },
   "devDependencies": {
     "@changesets/cli": "^3.0.0",
-    "@formatjs/intl": "^4.1.12",
+    "@formatjs/intl": "^4.1.20",
     "@types/node": "^24.12.4",
     "@vitest/coverage-v8": "^5.0.0",
-    "commitizen": "^4.3.0",
+    "commitizen": "^4.3.2",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.1.7",
-    "lint-staged": "^13.2.2",
+    "lint-staged": "^17.5.0",
     "memfs": "^4.57.3",
-    "prettier": "^3.8.3",
+    "prettier": "^3.9.6",
     "ts-node": "^10.9.1",
-    "typescript": "^5.6.3",
+    "typescript": "^7.0.0",
     "vitest": "^5.0.0"
   },
   "dependencies": {
     "@formatjs/cli-lib": "^9.0.9",
-    "@formatjs/icu-messageformat-parser": "^3.5.0",
+    "@formatjs/icu-messageformat-parser": "^3.5.17",
     "chokidar": "^5.0.0",
     "commander": "^15.0.0"
   },
