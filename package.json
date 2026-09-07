@@ -43,7 +43,7 @@
     "@changesets/cli": "^2.31.0",
     "@formatjs/intl": "^4.1.12",
     "@types/node": "^24.12.4",
-    "@vitest/coverage-v8": "^4.1.8",
+    "@vitest/coverage-v8": "^5.0.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.3",
@@ -52,7 +52,7 @@
     "prettier": "^3.8.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.6.3",
-    "vitest": "^4.1.8"
+    "vitest": "^5.0.0"
   },
   "dependencies": {
     "@formatjs/cli-lib": "^8.6.0",
