@@ -1,7 +1,7 @@
 const red = (msg: string) => `\x1b[31m${msg}\x1b[0m`;
 const green = (msg: string) => `\x1b[32m${msg}\x1b[0m`;
 const cyan = (msg: string) => `\x1b[36m${msg}\x1b[0m`;
-const orange = (msg: string) => `\x0b[33m${msg}\x1b[0m`;
+const orange = (msg: string) => `\x1b[33m${msg}\x1b[0m`;
 const log = (...msg: string[]) => process.stderr.write(msg.map((it) => it.toString()).join(' ') + '\n');
 
 function success(msg: string) {
