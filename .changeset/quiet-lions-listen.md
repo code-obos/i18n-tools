@@ -1,5 +1,5 @@
 ---
-'@code-obos/i18n-tools': patch
+'@code-obos/i18n-tools': minor
 ---
 
 Oppdaterer alle avhengigheter til siste major.
