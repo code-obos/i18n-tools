@@ -40,7 +40,7 @@
     "@formatjs/intl": "^4.1.12"
   },
   "devDependencies": {
-    "@changesets/cli": "^2.31.0",
+    "@changesets/cli": "^3.0.0",
     "@formatjs/intl": "^4.1.12",
     "@types/node": "^24.12.4",
     "@vitest/coverage-v8": "^5.0.0",
@@ -55,10 +55,10 @@
     "vitest": "^5.0.0"
   },
   "dependencies": {
-    "@formatjs/cli-lib": "^8.6.0",
+    "@formatjs/cli-lib": "^9.0.9",
     "@formatjs/icu-messageformat-parser": "^3.5.0",
-    "chokidar": "^4.0.3",
-    "commander": "^14.0.2"
+    "chokidar": "^5.0.0",
+    "commander": "^15.0.0"
   },
   "lint-staged": {
     "*.{ts,js,css,md}": "prettier --write"

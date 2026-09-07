@@ -163,7 +163,7 @@
       "value": "start_date"
     }
   ],
-  "group-by-page/title": [
+  "group-by-page.title": [
     {
       "type": 0,
       "value": "The folder structure is preserved in the look-up-table."

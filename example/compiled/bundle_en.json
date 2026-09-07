@@ -11,7 +11,7 @@
   "datetime": {
     "defaultMessage": "I started this project at {start_time,time,::HHmm} on {start_date,date,::ddMMM}"
   },
-  "group-by-page/title": {
+  "group-by-page.title": {
     "defaultMessage": "The folder structure is preserved in the look-up-table."
   },
   "literal": {
