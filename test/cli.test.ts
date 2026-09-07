@@ -120,6 +120,40 @@ describe('cli argument parsing', () => {
 
             await expect(runCli('build', [srcDir, outDir, '--strict'])).rejects.toThrowError();
         });
+
+        it('should explain why --ast cannot be combined with -f script', async () => {
+            vol.fromNestedJSON({ 'close_nb.txt': 'Lukk' }, srcDir);
+
+            // Without the guard this fails inside JSON.parse with
+            // "Unexpected token 'c', "const text"... is not valid JSON".
+            await expect(runCli('build', [srcDir, outDir, '-f', 'script', '--ast'])).rejects.toThrowError(
+                /--ast is not available with '-f script'/,
+            );
+        });
+
+        it('should still allow --ast with the json formats', async () => {
+            for (const format of ['json', 'jsonlut', 'formatjs']) {
+                vol.reset();
+                vol.fromNestedJSON({ 'close_nb.txt': 'Lukk' }, srcDir);
+
+                await runCli('build', [srcDir, outDir, '-f', format, '--ast']);
+
+                expect(Object.keys(vol.toJSON(outDir)), format).toContain(`${outDir}/bundle_nb.compiled.json`);
+            }
+        });
+
+        it('should expose exactly the documented options', async () => {
+            const build = await freshCommand('build');
+
+            expect(build.options.map((option) => option.flags)).toEqual([
+                '-f, --format <format>',
+                '--typescript',
+                '--strict',
+                '--ast',
+                '--lut',
+                '-t, --timeZone <timezone>',
+            ]);
+        });
     });
 
     describe('watch', () => {
@@ -127,13 +161,12 @@ describe('cli argument parsing', () => {
             const build = await freshCommand('build');
             const watch = await freshCommand('watch');
 
-            const flags = (command: Command) =>
+            const describeOptions = (command: Command) =>
                 command.options
-                    .map((option) => option.flags)
-                    .sort()
+                    .map((option) => `${option.flags} | ${option.description} | ${option.defaultValue}`)
                     .join('\n');
 
-            expect(flags(watch)).toEqual(flags(build));
+            expect(describeOptions(watch)).toEqual(describeOptions(build));
         });
     });
 

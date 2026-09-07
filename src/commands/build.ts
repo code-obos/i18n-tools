@@ -22,6 +22,12 @@ export const buildCommand: Command = addBuildOptions(
     .action(runBuildCommand);
 
 export async function runBuildCommand(srcDir: string, outDir: string, config: BuildOptions) {
+    if (config.ast && config.format === 'script') {
+        throw new Error(
+            "--ast is not available with '-f script', because the generated bundle is javascript rather than json. Use -f formatjs, json or jsonlut.",
+        );
+    }
+
     const files = getIntlFiles(srcDir);
     const fs = getFilesystem();
     if (config.strict) {
