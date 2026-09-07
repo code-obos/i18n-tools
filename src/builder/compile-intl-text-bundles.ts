@@ -1,4 +1,4 @@
-import { IntlFile } from '../utils/intl-file.js';
+import { IntlFile, sortIntlFiles } from '../utils/intl-file.js';
 import { Format } from '../config.js';
 import { normalizeId } from '../utils/string-utils.js';
 
@@ -20,7 +20,9 @@ const formatMap: Record<Format, Formatter> = {
 export function compileIntlTextBundles(files: IntlFile[], format: Format): [string, string][] {
     const bundle = createTextBundle(files);
     const formatter: Formatter = formatMap[format];
-    return Object.entries(bundle).map(([locale, content]) => [locale, formatter(content)]);
+    return Object.entries(bundle)
+        .sort(([a], [b]) => (a < b ? -1 : 1))
+        .map(([locale, content]) => [locale, formatter(content)]);
 }
 
 function jsonFormatter(content: IntlTextBundle): string {
@@ -59,7 +61,7 @@ function formatjsFormatter(content: IntlTextBundle): string {
 }
 
 function createTextBundle(files: IntlFile[]): IntlTextBundles {
-    return files.reduce((acc, file) => {
+    return sortIntlFiles(files).reduce((acc, file) => {
         const locale = file.locale;
         const key = normalizeId(file.textId);
         const content = file.content;
