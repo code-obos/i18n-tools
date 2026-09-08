@@ -1,0 +1,866 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`build command, as used by nybolig-nettsider > should match the snapshot for the whole nybolig-shaped output 1`] = `
+{
+  "/app/src/intl/compiled/bundle_nb.compiled.json": "{
+  "anchors.tabs.default": [
+    {
+      "type": 0,
+      "value": "Oversikt"
+    }
+  ],
+  "bkmLabel": [
+    {
+      "options": {
+        "PARTOWNERSHIP": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Deleie"
+            }
+          ]
+        },
+        "PROPERTY_SWAP": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Boligbytte"
+            }
+          ]
+        },
+        "START_LIVING": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Bostart"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 1,
+              "value": "bkmModel"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "bkmModel"
+    }
+  ],
+  "close": [
+    {
+      "type": 0,
+      "value": "Lukk"
+    }
+  ],
+  "commonProjectAndProperty.informationmeeting.formIntro": [
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "\\n  Om informasjonsmøtet.\\n"
+        }
+      ],
+      "type": 8,
+      "value": "p"
+    },
+    {
+      "type": 0,
+      "value": "\\n\\n"
+    },
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "\\n  Velkommen.\\n"
+        }
+      ],
+      "type": 8,
+      "value": "p"
+    },
+    {
+      "type": 0,
+      "value": "\\n"
+    }
+  ],
+  "plannedProjectsMatched": [
+    {
+      "options": {
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Planlagte prosjekter"
+            }
+          ]
+        },
+        "true": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Planlagte prosjekter i området"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "region_selected"
+    }
+  ],
+  "propertyProject.banners.comingForSaleBodyText": [
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "\\n  "
+        },
+        {
+          "type": 1,
+          "value": "propertyProjectName"
+        },
+        {
+          "type": 0,
+          "value": " kommer snart for salg.\\n"
+        }
+      ],
+      "type": 8,
+      "value": "p"
+    },
+    {
+      "type": 0,
+      "value": "\\n"
+    }
+  ],
+  "propertyProject.newLeadForm.part1.heading": [
+    {
+      "type": 0,
+      "value": "Om deg"
+    }
+  ],
+  "propertyProject.newLeadForm.receipt.heading": [
+    {
+      "type": 0,
+      "value": "Takk"
+    }
+  ],
+  "salesassignment-table.parking.assigned-spaces": [
+    {
+      "type": 0,
+      "value": "Tildelte plasser"
+    }
+  ],
+  "salesassignment-table.parking.electric-charging-for-sale": [
+    {
+      "type": 0,
+      "value": "Ladeplass til salgs"
+    }
+  ],
+  "salesassignmentTable.heading.unitTBA": [
+    {
+      "type": 0,
+      "value": "BRA"
+    }
+  ],
+  "searchMatchHeading": [
+    {
+      "offset": 0,
+      "options": {
+        "=0": {
+          "value": [
+            {
+              "type": 0,
+              "value": "\\n    "
+            },
+            {
+              "offset": 0,
+              "options": {
+                "=0": {
+                  "value": [
+                    {
+                      "type": 0,
+                      "value": "\\n        "
+                    },
+                    {
+                      "offset": 0,
+                      "options": {
+                        "=0": {
+                          "value": [
+                            {
+                              "type": 0,
+                              "value": "Ingen treff"
+                            }
+                          ]
+                        },
+                        "one": {
+                          "value": [
+                            {
+                              "type": 0,
+                              "value": "Treff på "
+                            },
+                            {
+                              "type": 7
+                            },
+                            {
+                              "type": 0,
+                              "value": " kommende prosjekt"
+                            }
+                          ]
+                        },
+                        "other": {
+                          "value": [
+                            {
+                              "type": 0,
+                              "value": "Treff på "
+                            },
+                            {
+                              "type": 7
+                            },
+                            {
+                              "type": 0,
+                              "value": " kommende prosjekter"
+                            }
+                          ]
+                        }
+                      },
+                      "pluralType": "cardinal",
+                      "type": 6,
+                      "value": "count_planned_project"
+                    },
+                    {
+                      "type": 0,
+                      "value": "\\n      "
+                    }
+                  ]
+                },
+                "other": {
+                  "value": [
+                    {
+                      "type": 0,
+                      "value": "\\n        Fant "
+                    },
+                    {
+                      "offset": 0,
+                      "options": {
+                        "=1": {
+                          "value": [
+                            {
+                              "type": 7
+                            },
+                            {
+                              "type": 0,
+                              "value": " prosjekt"
+                            }
+                          ]
+                        },
+                        "other": {
+                          "value": [
+                            {
+                              "type": 7
+                            },
+                            {
+                              "type": 0,
+                              "value": " prosjekter"
+                            }
+                          ]
+                        }
+                      },
+                      "pluralType": "cardinal",
+                      "type": 6,
+                      "value": "count_project"
+                    },
+                    {
+                      "type": 0,
+                      "value": "\\n        "
+                    },
+                    {
+                      "offset": 0,
+                      "options": {
+                        "=0": {
+                          "value": [
+                          ]
+                        },
+                        "one": {
+                          "value": [
+                            {
+                              "type": 0,
+                              "value": "og "
+                            },
+                            {
+                              "type": 7
+                            },
+                            {
+                              "type": 0,
+                              "value": " kommende prosjekt"
+                            }
+                          ]
+                        },
+                        "other": {
+                          "value": [
+                            {
+                              "type": 0,
+                              "value": "og "
+                            },
+                            {
+                              "type": 7
+                            },
+                            {
+                              "type": 0,
+                              "value": " kommende prosjekter"
+                            }
+                          ]
+                        }
+                      },
+                      "pluralType": "cardinal",
+                      "type": 6,
+                      "value": "count_planned_project"
+                    },
+                    {
+                      "type": 0,
+                      "value": "\\n      "
+                    }
+                  ]
+                }
+              },
+              "pluralType": "cardinal",
+              "type": 6,
+              "value": "count_project"
+            },
+            {
+              "type": 0,
+              "value": "\\n  "
+            }
+          ]
+        },
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Treff på "
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": " ledig bolig"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Treff på "
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": " ledige boliger"
+            }
+          ]
+        }
+      },
+      "pluralType": "cardinal",
+      "type": 6,
+      "value": "count_properties"
+    }
+  ],
+  "traffic-split.mobileCta": [
+    {
+      "type": 0,
+      "value": "Se boliger"
+    }
+  ]
+}",
+  "/app/src/intl/compiled/bundle_nb.json": "{
+  "anchors.tabs.default": {
+    "defaultMessage": "Oversikt"
+  },
+  "bkmLabel": {
+    "defaultMessage": "{bkmModel, select,\\n  PARTOWNERSHIP {Deleie}\\n  START_LIVING {Bostart}\\n  PROPERTY_SWAP {Boligbytte}\\n  other {{bkmModel}}\\n}"
+  },
+  "close": {
+    "defaultMessage": "Lukk"
+  },
+  "commonProjectAndProperty.informationmeeting.formIntro": {
+    "defaultMessage": "<p>\\n  Om informasjonsmøtet.\\n</p>\\n\\n<p>\\n  Velkommen.\\n</p>\\n"
+  },
+  "plannedProjectsMatched": {
+    "defaultMessage": "{ region_selected, select,\\n  true {Planlagte prosjekter i området}\\n  other {Planlagte prosjekter}\\n}"
+  },
+  "propertyProject.banners.comingForSaleBodyText": {
+    "defaultMessage": "<p>\\n  { propertyProjectName} kommer snart for salg.\\n</p>\\n"
+  },
+  "propertyProject.newLeadForm.part1.heading": {
+    "defaultMessage": "Om deg"
+  },
+  "propertyProject.newLeadForm.receipt.heading": {
+    "defaultMessage": "Takk"
+  },
+  "salesassignment-table.parking.assigned-spaces": {
+    "defaultMessage": "Tildelte plasser"
+  },
+  "salesassignment-table.parking.electric-charging-for-sale": {
+    "defaultMessage": "Ladeplass til salgs"
+  },
+  "salesassignmentTable.heading.unitTBA": {
+    "defaultMessage": "BRA"
+  },
+  "searchMatchHeading": {
+    "defaultMessage": "{count_properties, plural,\\n  =0 {\\n    {count_project, plural,\\n      =0 {\\n        {count_planned_project, plural,\\n          =0 {Ingen treff}\\n          one {Treff på # kommende prosjekt}\\n          other {Treff på # kommende prosjekter}\\n        }\\n      }\\n      other {\\n        Fant {count_project,plural,=1{# prosjekt} other {# prosjekter}}\\n        {count_planned_project, plural,\\n          =0 {}\\n          one {og # kommende prosjekt}\\n          other {og # kommende prosjekter}\\n        }\\n      }\\n    }\\n  }\\n  one {Treff på # ledig bolig}\\n  other {Treff på # ledige boliger}\\n}"
+  },
+  "traffic-split.mobileCta": {
+    "defaultMessage": "Se boliger"
+  }
+}",
+  "/app/src/intl/compiled/bundle_sv.compiled.json": "{
+  "anchors.tabs.default": [
+    {
+      "type": 0,
+      "value": "Översikt"
+    }
+  ],
+  "bkmLabel": [
+    {
+      "options": {
+        "PARTOWNERSHIP": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Delagt"
+            }
+          ]
+        },
+        "PROPERTY_SWAP": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Bostadsbyte"
+            }
+          ]
+        },
+        "START_LIVING": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Bostart"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 1,
+              "value": "bkmModel"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "bkmModel"
+    }
+  ],
+  "close": [
+    {
+      "type": 0,
+      "value": "Stäng"
+    }
+  ],
+  "commonProjectAndProperty.informationmeeting.formIntro": [
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "[TODO]"
+        }
+      ],
+      "type": 8,
+      "value": "p"
+    }
+  ],
+  "plannedProjectsMatched": [
+    {
+      "options": {
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Planerade projekt"
+            }
+          ]
+        },
+        "true": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Planerade projekt i området"
+            }
+          ]
+        }
+      },
+      "type": 5,
+      "value": "region_selected"
+    }
+  ],
+  "propertyProject.banners.comingForSaleBodyText": [
+    {
+      "children": [
+        {
+          "type": 0,
+          "value": "\\n  "
+        },
+        {
+          "type": 1,
+          "value": "propertyProjectName"
+        },
+        {
+          "type": 0,
+          "value": " kommer snart till försäljning.\\n"
+        }
+      ],
+      "type": 8,
+      "value": "p"
+    },
+    {
+      "type": 0,
+      "value": "\\n"
+    }
+  ],
+  "propertyProject.newLeadForm.part1.heading": [
+    {
+      "type": 0,
+      "value": "Om dig"
+    }
+  ],
+  "propertyProject.newLeadForm.receipt.heading": [
+    {
+      "type": 0,
+      "value": "Tack"
+    }
+  ],
+  "salesassignment-table.parking.assigned-spaces": [
+    {
+      "type": 0,
+      "value": "Tilldelade platser"
+    }
+  ],
+  "salesassignment-table.parking.electric-charging-for-sale": [
+    {
+      "type": 0,
+      "value": "Laddplats till försäljning"
+    }
+  ],
+  "salesassignmentTable.heading.unitTBA": [
+    {
+      "type": 0,
+      "value": "BOA"
+    }
+  ],
+  "searchMatchHeading": [
+    {
+      "offset": 0,
+      "options": {
+        "=0": {
+          "value": [
+            {
+              "type": 0,
+              "value": "\\n    "
+            },
+            {
+              "offset": 0,
+              "options": {
+                "=0": {
+                  "value": [
+                    {
+                      "type": 0,
+                      "value": "\\n        "
+                    },
+                    {
+                      "offset": 0,
+                      "options": {
+                        "=0": {
+                          "value": [
+                            {
+                              "type": 0,
+                              "value": "Inga träffar"
+                            }
+                          ]
+                        },
+                        "one": {
+                          "value": [
+                            {
+                              "type": 0,
+                              "value": "Träff på "
+                            },
+                            {
+                              "type": 7
+                            },
+                            {
+                              "type": 0,
+                              "value": " kommande projekt"
+                            }
+                          ]
+                        },
+                        "other": {
+                          "value": [
+                            {
+                              "type": 0,
+                              "value": "Träff på "
+                            },
+                            {
+                              "type": 7
+                            },
+                            {
+                              "type": 0,
+                              "value": " kommande projekt"
+                            }
+                          ]
+                        }
+                      },
+                      "pluralType": "cardinal",
+                      "type": 6,
+                      "value": "count_planned_project"
+                    },
+                    {
+                      "type": 0,
+                      "value": "\\n      "
+                    }
+                  ]
+                },
+                "other": {
+                  "value": [
+                    {
+                      "type": 0,
+                      "value": "\\n        Träff på "
+                    },
+                    {
+                      "offset": 0,
+                      "options": {
+                        "=1": {
+                          "value": [
+                            {
+                              "type": 7
+                            },
+                            {
+                              "type": 0,
+                              "value": " projekt"
+                            }
+                          ]
+                        },
+                        "other": {
+                          "value": [
+                            {
+                              "type": 7
+                            },
+                            {
+                              "type": 0,
+                              "value": " projekt"
+                            }
+                          ]
+                        }
+                      },
+                      "pluralType": "cardinal",
+                      "type": 6,
+                      "value": "count_project"
+                    },
+                    {
+                      "type": 0,
+                      "value": "\\n        "
+                    },
+                    {
+                      "offset": 0,
+                      "options": {
+                        "=0": {
+                          "value": [
+                          ]
+                        },
+                        "one": {
+                          "value": [
+                            {
+                              "type": 0,
+                              "value": "och "
+                            },
+                            {
+                              "type": 7
+                            },
+                            {
+                              "type": 0,
+                              "value": " kommande projekt"
+                            }
+                          ]
+                        },
+                        "other": {
+                          "value": [
+                            {
+                              "type": 0,
+                              "value": "och "
+                            },
+                            {
+                              "type": 7
+                            },
+                            {
+                              "type": 0,
+                              "value": " kommande projekt"
+                            }
+                          ]
+                        }
+                      },
+                      "pluralType": "cardinal",
+                      "type": 6,
+                      "value": "count_planned_project"
+                    },
+                    {
+                      "type": 0,
+                      "value": "\\n      "
+                    }
+                  ]
+                }
+              },
+              "pluralType": "cardinal",
+              "type": 6,
+              "value": "count_project"
+            },
+            {
+              "type": 0,
+              "value": "\\n  "
+            }
+          ]
+        },
+        "one": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Träff på "
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": " ledig bostad"
+            }
+          ]
+        },
+        "other": {
+          "value": [
+            {
+              "type": 0,
+              "value": "Träff på "
+            },
+            {
+              "type": 7
+            },
+            {
+              "type": 0,
+              "value": " lediga bostäder"
+            }
+          ]
+        }
+      },
+      "pluralType": "cardinal",
+      "type": 6,
+      "value": "count_properties"
+    }
+  ],
+  "traffic-split.mobileCta": [
+    {
+      "type": 0,
+      "value": "Se bostäder"
+    }
+  ]
+}",
+  "/app/src/intl/compiled/bundle_sv.json": "{
+  "anchors.tabs.default": {
+    "defaultMessage": "Översikt"
+  },
+  "bkmLabel": {
+    "defaultMessage": "{bkmModel, select,\\n  PARTOWNERSHIP {Delagt}\\n  START_LIVING {Bostart}\\n  PROPERTY_SWAP {Bostadsbyte}\\n  other {{bkmModel}}\\n}"
+  },
+  "close": {
+    "defaultMessage": "Stäng"
+  },
+  "commonProjectAndProperty.informationmeeting.formIntro": {
+    "defaultMessage": "<p>[TODO]</p>"
+  },
+  "plannedProjectsMatched": {
+    "defaultMessage": "{ region_selected, select,\\n  true {Planerade projekt i området}\\n  other {Planerade projekt}\\n}"
+  },
+  "propertyProject.banners.comingForSaleBodyText": {
+    "defaultMessage": "<p>\\n  { propertyProjectName} kommer snart till försäljning.\\n</p>\\n"
+  },
+  "propertyProject.newLeadForm.part1.heading": {
+    "defaultMessage": "Om dig"
+  },
+  "propertyProject.newLeadForm.receipt.heading": {
+    "defaultMessage": "Tack"
+  },
+  "salesassignment-table.parking.assigned-spaces": {
+    "defaultMessage": "Tilldelade platser"
+  },
+  "salesassignment-table.parking.electric-charging-for-sale": {
+    "defaultMessage": "Laddplats till försäljning"
+  },
+  "salesassignmentTable.heading.unitTBA": {
+    "defaultMessage": "BOA"
+  },
+  "searchMatchHeading": {
+    "defaultMessage": "{count_properties, plural,\\n  =0 {\\n    {count_project, plural,\\n      =0 {\\n        {count_planned_project, plural,\\n          =0 {Inga träffar}\\n          one {Träff på # kommande projekt}\\n          other {Träff på # kommande projekt}\\n        }\\n      }\\n      other {\\n        Träff på {count_project,plural,=1{# projekt} other {# projekt}}\\n        {count_planned_project, plural,\\n          =0 {}\\n          one {och # kommande projekt}\\n          other {och # kommande projekt}\\n        }\\n      }\\n    }\\n  }\\n  one {Träff på # ledig bostad}\\n  other {Träff på # lediga bostäder}\\n}"
+  },
+  "traffic-split.mobileCta": {
+    "defaultMessage": "Se bostäder"
+  }
+}",
+  "/app/src/intl/compiled/lut.ts": "import React from "react";
+import {IntlShape} from "@formatjs/intl";
+// @ts-ignore
+import {FormatXMLElementFn} from "intl-messageformat";
+
+export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
+  return {
+    "anchors": {
+      "tabs": {
+        "default": () => intl.formatMessage({ id: 'anchors.tabs.default' }, {}),
+      },
+    },
+    "bkmLabel": (args: { bkmModel: 'PARTOWNERSHIP' | 'START_LIVING' | 'PROPERTY_SWAP' | 'other' | string }) => intl.formatMessage({ id: 'bkmLabel' }, {bkmModel: args.bkmModel}),
+    "close": () => intl.formatMessage({ id: 'close' }, {}),
+    "commonProjectAndProperty": {
+      "informationmeeting": {
+        "formIntro": (args: { p: FormatXMLElementFn<React.ReactNode> }) => intl.formatMessage({ id: 'commonProjectAndProperty.informationmeeting.formIntro' }, {p: args.p}),
+      },
+    },
+    "plannedProjectsMatched": (args: { region_selected: 'true' | 'other' | string }) => intl.formatMessage({ id: 'plannedProjectsMatched' }, {region_selected: args.region_selected}),
+    "propertyProject": {
+      "banners": {
+        "comingForSaleBodyText": (args: { p: FormatXMLElementFn<React.ReactNode>;propertyProjectName: string }) => intl.formatMessage({ id: 'propertyProject.banners.comingForSaleBodyText' }, {p: args.p, propertyProjectName: args.propertyProjectName}),
+      },
+      "newLeadForm": {
+        "part1": {
+          "heading": () => intl.formatMessage({ id: 'propertyProject.newLeadForm.part1.heading' }, {}),
+        },
+        "receipt": {
+          "heading": () => intl.formatMessage({ id: 'propertyProject.newLeadForm.receipt.heading' }, {}),
+        },
+      },
+    },
+    "salesassignmentTable": {
+      "parking": {
+        "assignedSpaces": () => intl.formatMessage({ id: 'salesassignment-table.parking.assigned-spaces' }, {}),
+        "electricChargingForSale": () => intl.formatMessage({ id: 'salesassignment-table.parking.electric-charging-for-sale' }, {}),
+      },
+      "heading": {
+        "unitTBA": () => intl.formatMessage({ id: 'salesassignmentTable.heading.unitTBA' }, {}),
+      },
+    },
+    "searchMatchHeading": (args: { count_properties: number;count_project: number;count_planned_project: number }) => intl.formatMessage({ id: 'searchMatchHeading' }, {count_properties: args.count_properties, count_project: args.count_project, count_planned_project: args.count_planned_project}),
+    "trafficSplit": {
+      "mobileCta": () => intl.formatMessage({ id: 'traffic-split.mobileCta' }, {}),
+    },
+  }
+}",
+}
+`;

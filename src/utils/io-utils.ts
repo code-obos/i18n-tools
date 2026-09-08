@@ -3,12 +3,9 @@ import { getFilesystem } from './get-filesystem.js';
 
 export function getAllFiles(directory: string): string[] {
     const fs = getFilesystem();
-    return fs.readdirSync(directory).flatMap((file) => {
-        const fullPath = path.join(directory, file.toString());
-        const isDirectory = fs.lstatSync(fullPath).isDirectory();
-        if (isDirectory) {
-            return getAllFiles(fullPath);
-        }
-        return [fullPath];
-    });
+    const entries = fs.readdirSync(directory, { recursive: true }) as unknown as string[];
+
+    return entries
+        .map((entry) => path.join(directory, entry.toString()))
+        .filter((entryPath) => !fs.lstatSync(entryPath).isDirectory());
 }

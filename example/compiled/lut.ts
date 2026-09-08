@@ -10,7 +10,7 @@ export function createIntlLUT(intl: IntlShape<React.ReactNode>) {
     "datePluralAndTag": (args: { div: FormatXMLElementFn<React.ReactNode>;gender: 'male' | 'female' | 'other' | string;p: FormatXMLElementFn<React.ReactNode>;date: Date }) => intl.formatMessage({ id: 'datePluralAndTag' }, {div: args.div, gender: args.gender, p: args.p, date: args.date}),
     "datetime": (args: { start_time: Date;start_date: Date }) => intl.formatMessage({ id: 'datetime' }, {start_time: args.start_time, start_date: args.start_date}),
     "groupByPage": {
-      "title": () => intl.formatMessage({ id: 'group-by-page/title' }, {}),
+      "title": () => intl.formatMessage({ id: 'group-by-page.title' }, {}),
     },
     "literal": () => intl.formatMessage({ id: 'literal' }, {}),
     "number": (args: { smallest: number;biggest: number;bagel_price: number }) => intl.formatMessage({ id: 'number' }, {smallest: args.smallest, biggest: args.biggest, bagel_price: args.bagel_price}),

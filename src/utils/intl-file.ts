@@ -1,5 +1,5 @@
 import * as pathUtils from 'path';
-import { camelCase } from './string-utils.js';
+import { camelCase, normalizeId } from './string-utils.js';
 import { getFilesystem } from './get-filesystem.js';
 
 const languagePattern = /_([^\W_]+)\.\w+$/;
@@ -17,6 +17,26 @@ function findLocale(path: string): string {
 
 function findKey(path: string): string {
     return path.replace(removeLanguagePattern, '');
+}
+
+/**
+ * Deliberately not localeCompare: its result depends on the ICU locale data of the
+ * machine running the build, which would defeat the point of sorting at all.
+ */
+function compare(a: string, b: string): number {
+    if (a === b) return 0;
+    return a < b ? -1 : 1;
+}
+
+/**
+ * Orders files by id so that generated bundles do not depend on the order the
+ * filesystem happens to hand out directory entries in. Ids are normalized first, so
+ * the ordering is the same on Windows (\) and unix (/).
+ */
+export function sortIntlFiles(files: IntlFile[]): IntlFile[] {
+    return [...files].sort(
+        (a, b) => compare(normalizeId(a.textId), normalizeId(b.textId)) || compare(a.locale, b.locale),
+    );
 }
 
 export class IntlFile {
